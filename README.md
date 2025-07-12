@@ -108,10 +108,12 @@ source ./test_install_env/bin/activate
 * Install your package from TestPyPI
 pip install --index-url [https://test.pypi.org/simple/](https://test.pypi.org/simple/) --no-deps company-project
 
-* Now you can use your command-line script:
+``` Now you can use your command-line script:
 get-papers-list "example query"
+```
 
-* Or import your module in a Python interpreter:
-* python
-* >>> import company_project
-* >>> # You can now call functions from your module, e.g., company_project.pubmed_api_client.search_pubmed_ids(...)
+ Or import your module in a Python interpreter:
+ ```python
+ >>> import company_project
+ >>> # You can now call functions from your module, e.g., company_project.pubmed_api_client.search_pubmed_ids(...)
+```
