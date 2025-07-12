@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pubmed-paper-fetcher"
+version = "0.1.0"
+description = "A Python program to fetch research papers from PubMed and identify non-academic authors from pharmaceutical/biotech companies."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+# CORRECTED: Define packages directly as an array under [tool.poetry]
+packages = [
+    { include = "company_project", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+requests = ">=2.32.4,<3.0.0"
+pandas = ">=2.3.1,<3.0.0"
+lxml = ">=6.0.0,<7.0.0"
+
+[tool.poetry.scripts]
+# This remains the same, as it correctly references the package
+get-papers-list = "company_project.get_papers_list:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
