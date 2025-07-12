@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pubmed-paper-fetcher"
+name = "company_project"
 version = "0.1.0"
 description = "A Python program to fetch research papers from PubMed and identify non-academic authors from pharmaceutical/biotech companies."
 authors = ["Your Name <you@example.com>"]

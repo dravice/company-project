@@ -3,8 +3,6 @@ import csv
 import sys
 import xml.etree.ElementTree as ET
 from typing import List, Dict, Any, Tuple
-
-# Use relative imports for modules within the same package (src/company_project)
 from .pubmed_api_client import search_pubmed_ids, fetch_pubmed_details
 from .xml_parser import parse_pubmed_article_xml, get_non_academic_authors
 
