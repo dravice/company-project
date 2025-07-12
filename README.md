@@ -28,17 +28,17 @@ The project is organized as a Poetry-managed Python package with a `src` layout 
 
 ### Prerequisites
 
-* Python 3.9+
+* Python >=3.12
 * Poetry (installation instructions: `pip install poetry`)
 
 ### Setup
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/dravice/company-project.git
     cd company-project
     ```
-    (Replace `<your-repository-url>` with the actual URL of your GitHub repository.)
+    
 
 2.  **Install Dependencies:**
     Navigate to the project's root directory (where `pyproject.toml` is located) and install the dependencies using Poetry:
@@ -71,12 +71,10 @@ Search for papers and print results to console:
 ```Bash
 
 poetry run get-papers-list "CRISPR gene editing"
-Search for papers, print debug info, and save results to a CSV file:
 ```
 ```Bash
 
 poetry run get-papers-list "Alzheimer's disease immunotherapy" --debug --file alz_results.csv
-Search for papers and save to a specific file:
 ```
 ```Bash
 
