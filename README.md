@@ -5,7 +5,7 @@ This project provides a Python command-line program to fetch research papers fro
 ## 1. Project Structure
 
 The project is organized as a Poetry-managed Python package with a `src` layout for the main application logic:
-company-project/
+```company-project/
 ├── src/
 │   └── company_project/
 │       ├── init.py          # Makes 'company_project' a Python package
@@ -15,7 +15,7 @@ company-project/
 ├── pyproject.toml               # Poetry project configuration and dependencies
 ├── poetry.lock                  # Poetry's locked dependencies
 └── README.md                    # This documentation file
-
+```
 * `src/company_project/`: This directory contains the core application source code.
     * `__init__.py`: An empty file that signifies `company_project` as a Python package.
     * `get_papers_list.py`: This is the main script that serves as the command-line entry point. It orchestrates fetching data from PubMed, parsing the XML, and filtering for company-affiliated authors.
