@@ -1,10 +1,6 @@
 import requests
 from typing import List, Dict, Any, Optional
 
-# Base URL for NCBI E-utilities
-# Documentation: https://www.ncbi.nlm.nih.gov/books/NBK25499/#_chapter4_ESearch
-# Documentation: https://www.ncbi.nlm.nih.gov/books/NBK25499/#_chapter4_EFetch
-
 EUTILS_BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 
 def search_pubmed_ids(query: str, retmax: int = 20) -> List[str]:
@@ -22,14 +18,14 @@ def search_pubmed_ids(query: str, retmax: int = 20) -> List[str]:
     params = {
         "db": "pubmed",
         "term": query,
-        "retmode": "json", # Requesting JSON format for easier parsing
+        "retmode": "json",
         "retmax": retmax
     }
     print(f"Searching PubMed with query: '{query}'") # Debug print
 
     try:
         response = requests.get(esearch_url, params=params)
-        response.raise_for_status() # Raise an exception for HTTP errors (4xx or 5xx)
+        response.raise_for_status()
         data = response.json()
         # The IDs are typically found under 'esearchresult' -> 'idlist'
         id_list = data.get("esearchresult", {}).get("idlist", [])
@@ -43,13 +39,13 @@ def search_pubmed_ids(query: str, retmax: int = 20) -> List[str]:
         print(f"Response content: {response.text}") # Print raw response for debugging
         return []
 
-def fetch_pubmed_details(pubmed_ids: List[str]) -> Optional[str]: # IMPORTANT: Changed return type to Optional[str]
+def fetch_pubmed_details(pubmed_ids: List[str]) -> Optional[str]:
     """
     Fetches detailed information for a list of PubMed IDs.
     Returns the full XML content string for all articles.
     """
     if not pubmed_ids:
-        return None # Changed from [] to None
+        return None 
 
     # Join IDs with commas for the efetch request
     id_string = ",".join(pubmed_ids)
@@ -57,7 +53,7 @@ def fetch_pubmed_details(pubmed_ids: List[str]) -> Optional[str]: # IMPORTANT: C
     params = {
         "db": "pubmed",
         "id": id_string,
-        "retmode": "xml", # XML is often richer for scientific literature details
+        "retmode": "xml",
         "rettype": "full"
     }
     print(f"Fetching details for {len(pubmed_ids)} PubMed IDs.") # Debug print
@@ -65,7 +61,7 @@ def fetch_pubmed_details(pubmed_ids: List[str]) -> Optional[str]: # IMPORTANT: C
     try:
         response = requests.get(efetch_url, params=params)
         response.raise_for_status()
-        return response.text # Directly return the full XML string
+        return response.text 
     except requests.exceptions.RequestException as e:
         print(f"Error during PubMed details fetch: {e}")
         return None

@@ -128,7 +128,7 @@ def main():
             print(f"Successfully saved {relevant_papers_count} relevant papers to '{output_filename}'")
         else:
             for row in csv_data:
-                print(",".join(f'"{item}"' for item in row)) # Basic CSV format for console
+                print(",".join(f'"{item}"' for item in row)) # CSV format
 
     except Exception as e:
         print(f"An error occurred: {e}", file=sys.stderr)
