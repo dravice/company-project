@@ -90,14 +90,14 @@ Python: The core programming language.
 
 Poetry: Used for dependency management and packaging.
 
-Poetry Official Website
+[Poetry Official Website](https://python-poetry.org/)
 
 Requests: A Python library for making HTTP requests to interact with the PubMed API.
 
-Requests Documentation
+[Requests Documentation](https://requests.readthedocs.io/en/latest/)
 
 LXML: A powerful and easy-to-use library for processing XML and HTML.
 
-LXML Documentation
+[LXML Documentation](https://lxml.de/tutorial.html)
 
 Google Gemini (Large Language Model): This LLM was used to assist in the development process, including generating initial code structures, debugging, and refining logic based on provided tracebacks and problem descriptions.
