@@ -98,8 +98,6 @@ LXML: A powerful and easy-to-use library for processing XML and HTML.
 
 [LXML Documentation](https://lxml.de/tutorial.html)
 
-Google Gemini (Large Language Model): This LLM was used to assist in the development process, including generating initial code structures, debugging, and refining logic based on provided tracebacks and problem descriptions.
-
 5.Published the module to test-pypi
 source ./test_install_env/bin/activate
 
